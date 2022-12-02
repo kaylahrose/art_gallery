@@ -14,7 +14,6 @@ RSpec.describe Artwork do
   end
   describe 'instance methods' do
     describe '#painting?' do
-    #   artwork = Artwork.create!()
     end
   end
 end
