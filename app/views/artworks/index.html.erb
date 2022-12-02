@@ -1,0 +1,8 @@
+<h1>All Artworks</h1>
+
+<% @artworks.each do |artwork| %>
+    <h3><%= artwork.name %></h3>
+    <p>Medium: <%= artwork.medium %><p>
+    <p>Value: $<%= artwork.value %><p>
+    <p>For sale?: <%= artwork.for_sale %><p>
+    <% end %>
