@@ -20,6 +20,4 @@ RSpec.describe 'The Artists index page' do
     expect(page).to have_content(warhol.created_at)
     expect(page).to have_content(rothko.created_at)
   end
-
-
 end
