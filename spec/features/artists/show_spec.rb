@@ -13,4 +13,14 @@ RSpec.describe 'The Artists show page' do
       expect(page).to_not have_content(painting.name)
       expect(page).to_not have_content(rothko.name)
     end
+
+    it 'displays artists artwork count' do
+      warhol = Artist.create!(name: "Warhol", active: true, popularity: 5)
+      painting = warhol.artworks.create!(name: "Starry Night", medium: "oil", value: 9834527, for_sale: true)
+      painting_2 = warhol.artworks.create!(name: "Mona Lisa", medium: "oil", value: 9834527, for_sale: true)
+      painting_3 = warhol.artworks.create!(name: "The David", medium: "oil", value: 9834527, for_sale: true)
+      visit "/artists/#{warhol.id}"
+
+      expect(page).to have_content(warhol.artwork_count)
+    end
 end
