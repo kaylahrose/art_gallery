@@ -23,4 +23,17 @@ RSpec.describe 'The Artists show page' do
 
       expect(page).to have_content(warhol.artwork_count)
     end
+
+    it 'displays link to artists artwork show page' do
+      warhol = Artist.create!(name: "Warhol", active: true, popularity: 5)
+      painting = warhol.artworks.create!(name: "Starry Night", medium: "oil", value: 9834527, for_sale: true)
+      painting_2 = warhol.artworks.create!(name: "Mona Lisa", medium: "oil", value: 9834527, for_sale: true)
+      painting_3 = warhol.artworks.create!(name: "The David", medium: "oil", value: 9834527, for_sale: true)
+      visit "/artists/#{warhol.id}"
+      click_link "#{warhol.name}'s Artwork"
+  
+      expect(current_path).to eq("/artists/#{warhol.id}/artworks")
+
+      expect()
+    end
 end
