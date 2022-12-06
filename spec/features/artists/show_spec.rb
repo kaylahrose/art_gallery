@@ -33,7 +33,5 @@ RSpec.describe 'The Artists show page' do
       click_link "#{warhol.name}'s Artwork"
   
       expect(current_path).to eq("/artists/#{warhol.id}/artworks")
-
-      expect()
     end
 end
