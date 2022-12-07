@@ -20,4 +20,14 @@ RSpec.describe 'The Artists index page' do
     expect(page).to have_content(warhol.created_at)
     expect(page).to have_content(rothko.created_at)
   end
+
+  it 'displays link to create a new artist' do
+    visit "/artists"
+    click_link 'New Artist'
+
+    expect(current_path).to eq("/artists/new")
+  end
+
+  it 'creates new artist with form' do
+  end
 end
