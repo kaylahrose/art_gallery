@@ -34,4 +34,12 @@ RSpec.describe 'The Artists show page' do
   
       expect(current_path).to eq("/artists/#{warhol.id}/artworks")
     end
+
+    it 'displays link to update the artist' do
+      warhol = Artist.create!(name: "Warhol", active: true, popularity: 5)
+      
+      visit "/artists/#{warhol.id}"
+      click_link "Update Artist"
+      expect(current_path).to eq("/artists/#{warhol.id}/edit")
+    end
 end
