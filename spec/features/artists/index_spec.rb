@@ -27,7 +27,4 @@ RSpec.describe 'The Artists index page' do
 
     expect(current_path).to eq("/artists/new")
   end
-
-  it 'creates new artist with form' do
-  end
 end

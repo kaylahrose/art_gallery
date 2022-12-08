@@ -3,3 +3,4 @@
 <p>Popularity: <%= @artist.popularity %></p>
 <p>Artwork Count: <%= @artist.artwork_count %></p>
 <p> <%= link_to "#{@artist.name}'s Artwork", "/artists/#{@artist.id}/artworks" %></p>
+<p> <%= link_to "Update Artist", "/artists/#{@artist.id}/edit" %></p>

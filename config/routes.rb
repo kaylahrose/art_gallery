@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/artists/:id', to: 'artists#show'
   get '/artworks', to: 'artworks#index'
   get '/artworks/:id', to: 'artworks#show'
-  get '/artists/:artist_id/artworks', to: 'artist_artworks#index'
+  # debug this change
+  get '/artists/:id/artworks', to: 'artist_artworks#index'
   post '/artists', to: 'artists#create'
+  get '/artists/:id/edit', to: 'artists#edit'
+  patch '/artists/:id', to: 'artists#update'
 end
